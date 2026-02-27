@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-import { LandingPage, Login, Signup } from "../pages";
+import { LandingPage, Login, Signup, Home } from "../pages";
 
 export const Routers = () => {
   return (
@@ -9,6 +9,8 @@ export const Routers = () => {
         {/* Auth */}
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        {/* Home */}
+        <Route path="/home" element={<Home />} />
       </Routes>
     </Router>
   );
