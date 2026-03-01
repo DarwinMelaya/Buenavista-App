@@ -9,6 +9,7 @@ import {
   HiOutlinePhone,
   HiOutlineLightningBolt,
 } from "react-icons/hi";
+import { Link } from "react-router-dom";
 
 const servicesSections = [
   {
@@ -73,7 +74,7 @@ const servicesSections = [
   },
 ];
 
-const Services = () => {
+export default function Services() {
   return (
     <Layout>
       <main className="relative bg-black pt-6 pb-10 sm:pt-8 sm:pb-14">
@@ -169,10 +170,14 @@ const Services = () => {
             <div className="grid gap-4 sm:gap-5 md:grid-cols-2 lg:grid-cols-3">
               {servicesSections.map((section) => {
                 const Icon = section.icon;
-                return (
+                const isBusinessPermits = section.title === "Business & Permits";
+
+                const card = (
                   <article
                     key={section.title}
-                    className={`group rounded-3xl bg-gradient-to-br ${section.color} px-4 py-4 sm:px-5 sm:py-5 border shadow-md shadow-slate-950/70 flex flex-col gap-3`}
+                    className={`group rounded-3xl bg-gradient-to-br ${section.color} px-4 py-4 sm:px-5 sm:py-5 border shadow-md shadow-slate-950/70 flex flex-col gap-3 ${
+                      isBusinessPermits ? "cursor-pointer hover:border-emerald-400/80" : ""
+                    }`}
                   >
                     <div className="flex items-start gap-3">
                       <div className="h-9 w-9 sm:h-10 sm:w-10 rounded-2xl bg-slate-950/70 border border-slate-700/80 flex items-center justify-center text-emerald-200 group-hover:border-emerald-400/80 transition-colors">
@@ -198,6 +203,16 @@ const Services = () => {
                     </ul>
                   </article>
                 );
+
+                if (isBusinessPermits) {
+                  return (
+                    <Link key={section.title} to="/services/business-permits" className="block">
+                      {card}
+                    </Link>
+                  );
+                }
+
+                return card;
               })}
             </div>
           </section>
@@ -205,6 +220,4 @@ const Services = () => {
       </main>
     </Layout>
   );
-};
-
-export default Services;
+}

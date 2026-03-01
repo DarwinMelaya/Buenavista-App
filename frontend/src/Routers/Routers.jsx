@@ -7,6 +7,7 @@ import {
   Services,
   News,
   Account,
+  BusinessPermits,
 } from "../pages";
 
 export const Routers = () => {
@@ -22,6 +23,12 @@ export const Routers = () => {
         <Route path="/services" element={<Services />} />
         <Route path="/account" element={<Account />} />
         <Route path="/news" element={<News />} />
+
+        {/* services */}
+        <Route
+          path="/services/business-permits"
+          element={<BusinessPermits />}
+        />
       </Routes>
     </Router>
   );
