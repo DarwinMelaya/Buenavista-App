@@ -1,4 +1,21 @@
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
+
 const Login = () => {
+  const [identifier, setIdentifier] = useState("");
+  const [password, setPassword] = useState("");
+  const navigate = useNavigate();
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    if (identifier === "test" && password === "test123") {
+      navigate("/home");
+    } else {
+      alert("Invalid test credentials. Use Email: test and Password: test123.");
+    }
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-slate-950 text-white">
       <header className="relative isolate overflow-hidden flex-1">
@@ -50,14 +67,14 @@ const Login = () => {
                   Log in to Buenavista App
                 </h1>
                 <p className="mt-2 text-xs sm:text-sm text-slate-200/90 max-w-md">
-                  Use your registered email or mobile number to continue. Your account
-                  lets you track requests, receive advisories, and access digital
-                  documents.
+                  Use your registered email or mobile number to continue. Your
+                  account lets you track requests, receive advisories, and
+                  access digital documents.
                 </p>
               </div>
 
               <div className="rounded-2xl bg-slate-950/85 border border-emerald-500/30 shadow-2xl shadow-slate-900/70 p-5 sm:p-6 space-y-4">
-                <form className="space-y-4">
+                <form className="space-y-4" onSubmit={handleSubmit}>
                   <div className="space-y-1.5 text-xs sm:text-sm">
                     <label
                       htmlFor="identifier"
@@ -70,6 +87,8 @@ const Login = () => {
                       type="text"
                       className="w-full rounded-lg border border-slate-700/80 bg-slate-900/70 px-3 py-2 text-xs sm:text-sm text-slate-50 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/80 focus:border-emerald-400"
                       placeholder="e.g. juan.delacruz@example.com"
+                      value={identifier}
+                      onChange={(event) => setIdentifier(event.target.value)}
                     />
                   </div>
 
@@ -85,6 +104,8 @@ const Login = () => {
                       type="password"
                       className="w-full rounded-lg border border-slate-700/80 bg-slate-900/70 px-3 py-2 text-xs sm:text-sm text-slate-50 placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-emerald-400/80 focus:border-emerald-400"
                       placeholder="Enter your password"
+                      value={password}
+                      onChange={(event) => setPassword(event.target.value)}
                     />
                     <div className="flex justify-end mt-1">
                       <button

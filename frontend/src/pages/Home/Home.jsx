@@ -64,16 +64,8 @@ const Home = () => {
         </div>
       </div>
 
-      {/* Hero / Dashboard Shell - aligned with LandingPage styling */}
-      <header className="relative isolate overflow-hidden pt-14 sm:pt-16">
-        <div
-          className="absolute inset-0 bg-cover bg-center bg-no-repeat"
-          style={{
-            backgroundImage: "url('/img/bg.png')",
-          }}
-        />
-        <div className="absolute inset-0 bg-slate-950/80" aria-hidden="true" />
-
+      {/* Hero / Dashboard Shell */}
+      <header className="relative bg-black pt-14 sm:pt-16">
         <div className="relative z-10">
           {/* Page header */}
           <div className="max-w-6xl mx-auto px-4 sm:px-6 pt-4 pb-3 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between">

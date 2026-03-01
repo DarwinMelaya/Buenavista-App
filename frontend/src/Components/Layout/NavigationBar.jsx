@@ -3,8 +3,6 @@ import {
   HiOutlineOfficeBuilding,
   HiOutlineNewspaper,
   HiOutlineUserCircle,
-  HiOutlineLogin,
-  HiOutlineUsers,
 } from "react-icons/hi";
 import { NavLink } from "react-router-dom";
 
