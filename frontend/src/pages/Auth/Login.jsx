@@ -14,8 +14,12 @@ const Login = () => {
           {/* Top brand bar */}
           <div className="max-w-5xl mx-auto w-full px-4 sm:px-6 pt-4 flex items-center justify-between gap-4">
             <div className="flex items-center gap-3">
-              <div className="h-10 w-10 rounded-full bg-emerald-500/90 flex items-center justify-center font-semibold text-slate-900 shadow-lg">
-                BV
+              <div className="h-10 w-10 rounded-full overflow-hidden bg-slate-900/80 shadow-lg ring-2 ring-emerald-400/70 flex items-center justify-center">
+                <img
+                  src="/img/logo.png"
+                  alt="Bayan ng Buenavista Seal"
+                  className="h-10 w-10 object-contain"
+                />
               </div>
               <div>
                 <p className="text-[10px] uppercase tracking-[0.25em] text-emerald-300">
